@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+:root {
+    --color-sky-blue: #40cfd4;
+    --color-dark-blue: #102a42;
+}
+/* universal properties */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+/* header */
+#home {
+    height: 100vh;
+    width: 98.7vw;
+    background: rgba(0, 0, 0, 0.4);
+}
+#home::before {
+    background: url(https://images.unsplash.com/photo-1614600395952-7b883e6a7d79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80) no-repeat center center/cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 120%;
+    width: 100%;
+    content: "";
+    z-index: -5;
+}
+/* navbar */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+}
+.fixed-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: white;
+    box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.4);
+}
+.logo {
+    color: var(--color-sky-blue);
+    font-size: 2rem;
+    margin: 0.1rem 2rem;
+}
+.links-container {
+    height: 100%;
+    width: 40%;
+}
+.links {
+    height: 100%;
+    width: 100%;
+    list-style: none;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.links a {
+    text-decoration: none;
+    padding: 10px;
+    color: white;
+}
+.fixed-navbar a {
+    color: var(--color-dark-blue);
+}
+.nav-toggle {
+    display: none;
+    border: transparent;
+    background: transparent;
+    color: var(--color-dark-blue);
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    position: absolute;
+    right: 7%;
+}
+.nav-toggle:hover {
+    color: var(--color-sky-blue);
+}
+
+@media (max-width: 800px) {
+    nav {
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .links-container {
+        height: 0px;
+        overflow: hidden;
+    }
+    .links {
+        display: flex;
+        height: fit-content;
+        flex-direction: column;
+        width: fit-content;
+        align-items: flex-start;
+    }
+    .links li {
+        margin: 0.5rem 1rem;
+    }
+    .links a {
+        color: var(--color-dark-blue);
+    }
+    .links a:hover {
+        color: var(--color-sky-blue);
+    }
+    .nav-toggle {
+        display: inline;
+    }
+}
+
+.section-center {
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.banner {
+    width: 60%;
+    color: white;
+    text-align: center;
+}
+.banner h1 {
+    text-transform: capitalize;
+    margin: 1.5rem 0;
+    font-size: 3.5rem;
+}
+.banner p {
+    font-size: 1.2rem;
+}
+.btn {
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    background: transparent;
+    transition: color 0.4s ease,
+                background-color 0.4s ease;
+}
+.btn:hover {
+    background: white;
+    color: var(--color-dark-blue);
+}
+/* back to top button */
+.top-link {
+    position: fixed;
+    bottom: 100px;
+    right: 100px;
+    background: var(--color-sky-blue);
+    border: transparent;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    color: white;
+    cursor: pointer;
+    font-size: 2rem;
+    animation: bounce 2s ease 0s infinite;
+    visibility: hidden;
+    z-index: -100;
+}
+.show-top-link {
+    visibility: visible;
+    z-index: 100;
+}
+@keyframes bounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+/* sections */
+section {
+    width: 98.7vw;
+    height: 100vh;
+    background: #f1f5f8;
+}
+.section-title {
+    color: var(--color-dark-blue);
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    text-align: center;
+}
+.section-title span {
+    color: var(--color-sky-blue);
+}
+footer {
+    width: 98.7vw;
+    height: 20vh;
+    background: var(--color-dark-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-text {
+    text-transform: capitalize;
+    color: white;
+    font-size: 1.2rem;
+}
